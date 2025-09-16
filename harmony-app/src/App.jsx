@@ -1,29 +1,22 @@
-"use client"
+"use client";
 import React from "react";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport
-} from "./components/ui/navigation-menu";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Login from "./pages/Login";
+import Order from "./pages/Order";
+import Home from "./pages/Home";
 export default function App() {
   return (
-    <div>
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuLink>Link</NavigationMenuLink>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/order" element={<Order />} />
+        {/* Ajoute d'autres routes ici */}
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
