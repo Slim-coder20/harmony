@@ -15,8 +15,12 @@ export default function Header() {
           />
         </div>
         <div className="flex-1 flex justify-end gap-4">
-          <FaShoppingCart size={25} color="#555" />
-          <FaUser size={25} color="#555" />
+          <Link to="/login">
+            <FaUser size={25} color="#555" />
+          </Link>
+          <Link to="/order">
+            <FaShoppingCart size={25} color="#555" />
+          </Link>
         </div>
       </div>
     </header>
