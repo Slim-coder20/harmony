@@ -7,7 +7,12 @@ export default function Header() {
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex-1 text-left">
           <Link to="/">Logo</Link>
+          {/* Blog  */}
+          <div className="flex-1 text-left inline-block m-2.5">
+            <Link to="/blog">Blog</Link>
+          </div>
         </div>
+
         {/* Input de Recherche  */}
         <div className="flex-1 flex justify-center">
           <div className="relative w-2/3">
@@ -24,7 +29,7 @@ export default function Header() {
         </div>
         {/* conexion et Inscription  */}
         <div className="flex-1 flex justify-end gap-4">
-          <Link to="/login">
+          <Link to="/register">
             <FaUser size={25} color="#555" />
           </Link>
           {/*  Lien vers la page Order */}
