@@ -9,8 +9,8 @@ import {
 
 export default function Carrousel() {
   return (
-    <div className="bg-white">
-      <Carousel className="w-full max-w-7xl mx-auto">
+    <div className="bg-white ">
+      <Carousel className="w-full max-w-7xl mx-auto p-6">
         <CarouselContent>
           <CarouselItem>
             <img
@@ -26,7 +26,20 @@ export default function Carrousel() {
               className="w-full h-[400px] object-cover rounded-lg"
             />
           </CarouselItem>
-          {/* Ajoute d'autres images ici */}
+          <CarouselItem>
+              <img src="/imagecarousel3.webp" 
+                    alt="image d'instrument batterie " 
+                    className="w-full h-[400px] object-cover rounded-lg"
+              
+              />
+          </CarouselItem>
+          <CarouselItem>
+              <img src="/carousel4.webp" 
+                    alt="image d'instrument batterie " 
+                    className="w-full h-[400px] object-cover rounded-lg"
+              
+              />
+          </CarouselItem>
         </CarouselContent>
         <CarouselPrevious size="icon" className="w-12 h-12" />
         <CarouselNext size="icon" className="w-12 h-12">

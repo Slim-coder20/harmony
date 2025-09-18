@@ -28,7 +28,7 @@ export default function Header() {
             <input
               type="text"
               placeholder="Rechercher..."
-              className="w-full px-4 py-2 border rounded-full pr-10 outline-none"
+              className=" bg-white w-full p-3 border rounded pr-10 "
             />
             <FaSearch
               size={18}
