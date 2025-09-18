@@ -197,9 +197,35 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
         </h2>
       </div>
       {/* Banniere publicitaire  2 */}
-      <div className="grid grid-cols-3 bg-black w-full p-48 min-h-2">
-       <p>Venez nous rendre visite !</p>
-          
+      <div className="grid grid-cols-3 bg-black w-full min-h-[350px]">
+        {/* Colonne 1 : image de fond + texte */}
+        <div className="relative col-span-1 flex items-center">
+          <div className="absolute inset-0 bg-[url('/carousel4.webp')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="relative z-10 p-12">
+            <p className="text-white text-3xl font-light">
+              Venez nous rendre visite ! Harmony vous vous propose le plus grand
+              espace musical de Paris.
+            </p>
+          </div>
+        </div>
+        {/* Colonne 2 et 3 : tes autres éléments */}
+        <div className="col-span-1 flex flex-col justify-center items-center">
+          {/* ...contenu à droite... */}
+          <span className=" text-6xl text-white font-bold border-b-4  border-blue-800">
+            Harmony
+          </span>
+          <span className=" text-2xl text-white ">STORES</span>
+        </div>
+        <div className="relative col-span-1 flex items-center">
+          <div className="absolute inset-0 bg-[url('/imagecarousel3.webp')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="relative z-10 p-12">
+            <p className="text-white text-3xl font-light text-center ">
+             4 Harmony stores à Paris d'espace musical 
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
