@@ -76,6 +76,97 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
     },
   ];
 
+  const newProducts = [
+    {
+      id: 1,
+      name: "NATIVE INSTRUMENTS MASCHINE MK3",
+      model: "MK3",
+      price: 600,
+      monthly: 55,
+      image: "/MK3.avif",
+      badge: "NOUVEAUTÉ",
+      stock: ["Stock Internet", "Magasins Paris"],
+    },
+    {
+      id: 2,
+      name: "LD system",
+      model: "CURV 500 PS ",
+      price: 2800,
+      monthly: 86,
+      image: "/Ldsystem.jpg",
+      badge: "NOUVEAUTÉ",
+      stock: ["Stock Internet", "Magasins Paris"],
+    },
+    {
+      id: 3,
+      name: "Orange",
+      model: "Orange Super Crush 100 Head",
+      price: 800,
+      monthly: 58,
+      image: "/orangeamp.webp",
+      badge: "NOUVEAUTÉ",
+      stock: ["Stock Internet", "Magasins Paris"],
+    },
+    {
+      id: 4,
+      name: "Korg",
+      model: "Korg microKey-2",
+      price: 86,
+      monthly: 25,
+      image: "/korgmicro.jpg",
+      badge: "NOUVEAUTÉ",
+      stock: ["Stock Internet", "Magasins Paris"],
+    },
+    {
+      id: 5,
+      name: "Fender",
+      model: "fender stratocaster",
+      price: 1500,
+      monthly: 45,
+      image: "/stratofender.jpg",
+      badge: "NOUVEAUTÉ",
+      stock: ["Stock Internet", "Magasins Paris"],
+    },
+  ];
+
+  const brands = [
+    {
+      id: 1,
+      name: "Yamaha",
+      image: "/yamahalogo.jpg",
+    },
+    {
+      id: 2,
+      name: "Ibanez",
+      image: "/ibanezLogo.png",
+    },
+    {
+      id: 3,
+      name: "Gibson",
+      image: "/gibsonlogo.png",
+    },
+    {
+      id: 4,
+      name: "Fender",
+      image: "/fenderlogo.png",
+    },
+    {
+      id: 5,
+      name: "Korg",
+      image: "/korglogo.webp",
+    },
+    {
+      id: 6,
+      name: "Shure",
+      image: "/shurelogo.png",
+    },
+    {
+      id: 7,
+      name: "Fodera",
+      image: "/fodera.gif",
+    },
+  ];
+
   return (
     <div className=" bg-white py-9">
       <h1 className="text-center text-3xl mt-4">
@@ -204,7 +295,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="relative z-10 p-12">
             <p className="text-white text-3xl font-light">
-              Venez nous rendre visite ! Harmony vous vous propose le plus grand
+              Venez nous rendre visite ! Harmony vous propose le plus grand
               espace musical de Paris.
             </p>
           </div>
@@ -222,10 +313,93 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="relative z-10 p-12">
             <p className="text-white text-3xl font-light text-center ">
-             4 Harmony stores à Paris d'espace musical 
+              4 Harmony stores à Paris d'espace musical
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Section des nouveaux produits */}
+      <h2 className="font-semibold ml-2 py-5 text-2xl mt-8">
+        Découvrez nos dernières nouveautés !
+      </h2>
+      {/* Les nouveaux produits Card */}
+      <div className=" flex overflow-x-auto gap-4 pb-4 scrollbar-hide ">
+        {newProducts.map((product) => (
+          // la carte // 
+          <div
+            key={product.id}
+            className="flex-shrink-0 w-64 bg-white rounded-lg shadow ml-2 relative"
+          >
+            {/*  Badge Nouveauté */}
+            <span className=" absolute top-2 left-2 bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold">
+              {product.badge}
+            </span>
+            {/* Image du produit  */}
+            <img
+              src={product.image}
+              alt={product.model}
+              className=" object-contain h-40 w-full mb-4"
+            />
+            {/* Nom et modèle */}
+            <h3 className=" font-semibold text-lg">{product.name}</h3>
+            <p className=" text-gray-600 text-sm mb-2">{product.model}</p>
+            {/* Prix principal et prix mensuel  */}
+            <div className=" flex items-center gap-2 mb-2">
+              <span className=" text-2xl font-bold">{product.price}€</span>
+              <h3 className=" font-semibold">
+                ou
+                <span className="text-blue-600 font-bold text-lg">
+                  {product.monthly}€/mois
+                </span>
+              </h3>
+            </div>
+            {/* Stock et disponibilité */}
+            <div className="flex flex-col gap-1 text-green-500 text-xs mb-2">
+              {product.stock.map((s, i) => (
+                <span key={i}>● {s}</span>
+              ))}
+            </div>
+            {/* Bouton favori */}
+            <button className="absolute bottom-2 right-2 bg-white rounded-full shadow p-2 cursor-pointer ">
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                className=""
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                  2 5.42 4.42 3 7.5 3c1.74 0 3.41 1.01 4.5 2.09
+                  C13.09 4.01 14.76 3 16.5 3
+                  19.58 3 22 5.42 22 8.5
+                  c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                />
+              </svg>
+            </button>
+          </div>
+        ))}
+      </div>
+
+      {/* Section des marques les plus recherchées */}
+      <h2 className="font-semibold text-center py-5 text-2xl mt-8">
+        Voici les marques les plus recherchées par les musiciens
+      </h2>
+      {/* Container principale  */}
+      <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6">
+        {brands.map((brand) => (
+          <div
+            key={brand.id}
+            className="flex items-center justify-center p-4 bg-white cursor-pointer"
+          >
+            <img
+              src={brand.image}
+              alt={brand.name}
+              className="h-16 w-auto object-contain "
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
