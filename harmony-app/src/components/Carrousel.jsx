@@ -41,8 +41,8 @@ export default function Carrousel() {
               />
           </CarouselItem>
         </CarouselContent>
-        <CarouselPrevious size="icon" className="w-12 h-12" />
-        <CarouselNext size="icon" className="w-12 h-12">
+        <CarouselPrevious size="icon" className="w-12 h-12 cursor-pointer" />
+        <CarouselNext size="icon" className="w-12 h-12 cursor-pointer">
           <ArrowRight size={40} />
         </CarouselNext>
       </Carousel>

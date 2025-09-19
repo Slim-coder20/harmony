@@ -9,8 +9,13 @@ export default function Header() {
       <div className="container mx-auto flex items-center justify-between ">
         <div className="flex flex-row items-center gap-4 flex-1">
           <Link to="/">
-            <img src="/Logo.png" alt="Logo Harmony" className="h-20" />
+            <img
+              src="/Logo.png"
+              alt="Logo Harmony"
+              className="h-20 cursor-pointer"
+            />
           </Link>
+          {/* Menu blog  */}
           <Link
             to="/blog"
             className=" px-4 py-2 rounded hover:bg-white hover:text-black transition ml-2 "

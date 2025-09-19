@@ -132,7 +132,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       <h2 className="font-semibold text-center py-5 text-2xl mt-3">
         Découvrez ici les meilleures ventes par univers !
       </h2>
-      {/* Les meilleures ventes */}
+      {/* Les meilleures ventes Card */}
       <div className=" grid grid-cols-5 sm:grid-cols-2 lg:grid-cols-3 gap-4 flex-wrap mt-5 ">
         {products.map((product) => (
           <div
@@ -215,7 +215,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
           <span className=" text-6xl text-white font-bold border-b-4  border-blue-800">
             Harmony
           </span>
-          <span className=" text-2xl text-white ">STORES</span>
+          <span className=" text-2xl text-white mt-2">STORES</span>
         </div>
         <div className="relative col-span-1 flex items-center">
           <div className="absolute inset-0 bg-[url('/imagecarousel3.webp')] bg-cover bg-center"></div>
