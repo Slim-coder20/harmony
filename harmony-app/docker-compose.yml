@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  harmony-app:
+    build: .
+    container_name: harmony-music-app
+    ports:
+      - "5173:5173"
+    stdin_open: true # Equivalent à -i (interactif)
+    tty: true # Equivalent à -t (terminal)
+    volumes:
+      - .:/app # Synchronise le code local avec le container
+      - /app/node_modules # Volume anonyme pour node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true # Améliore le hot reload
+    restart: unless-stopped # Redémarre automatiquement si crash
