@@ -283,7 +283,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       <div className=" bg-blue-500 w-full p-24 mt-14">
         <h2 className=" text-4xl text-white text-center font-light">
           Livraison <span className=" font-bold">gratuite</span> dès{" "}
-          <span className=" font-bold">69€</span> d'achat en France
+          <span className=" font-bold">50€</span> d'achat en France
           Métropolitaine.
         </h2>
       </div>

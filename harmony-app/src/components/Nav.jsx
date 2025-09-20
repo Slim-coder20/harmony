@@ -6,27 +6,27 @@ export default function Nav() {
       <ul className="flex gap-6 items-center text-lg font-medium">
         <li>
           <Link to="/" className="hover:text-blue-400 transition">
-            Guitare
+            Guitares
           </Link>
         </li>
         <li>
           <Link to="/" className="hover:text-blue-400 transition">
-            Amplis/Effets
+            Amplis / Effets
           </Link>
         </li>
         <li>
           <Link to="/" className="hover:text-blue-400 transition">
-            Basse
+            Basses
           </Link>
         </li>
         <li>
           <Link to="/" className="hover:text-blue-400 transition">
-            Batterie-Percussion
+            Batterie / Percussions 
           </Link>
         </li>
         <li>
           <Link to="/" className="hover:text-blue-400 transition">
-            Clavier-Pianos
+            Clavier / Piano 
           </Link>
         </li>
         <li>
