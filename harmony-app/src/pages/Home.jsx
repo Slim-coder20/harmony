@@ -7,6 +7,8 @@ import {
   FaStore,
   FaTruck,
 } from "react-icons/fa";
+import Carrousel from "../components/Carrousel";
+
 export default function Home() {
   /* Variable : je créé un tableau d'objets de produits qui me permettra d'afficher dynamiquement 
 les cartes des meilleurs ventes des produits en utilisant la méthode map() : cette méthode permet 
@@ -169,6 +171,9 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
 
   return (
     <div className=" bg-white py-9">
+      {/* Carrousel */}
+      <Carrousel />
+
       <h1 className="text-center text-3xl mt-4">
         Bienvenue chez <span className="text-blue-900">Harmony</span> !
       </h1>
@@ -326,7 +331,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       {/* Les nouveaux produits Card */}
       <div className=" flex overflow-x-auto gap-4 pb-4 scrollbar-hide ">
         {newProducts.map((product) => (
-          // la carte // 
+          // la carte //
           <div
             key={product.id}
             className="flex-shrink-0 w-64 bg-white rounded-lg shadow ml-2 relative"

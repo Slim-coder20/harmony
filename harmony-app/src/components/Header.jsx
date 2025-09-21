@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
-import { FaShoppingCart, FaUser, FaSearch } from "react-icons/fa";
-import { FaInfo } from "react-icons/fa";
-import { FaBlog } from "react-icons/fa";
+import {
+  FaShoppingCart,
+  FaUser,
+  FaSearch,
+  FaBlog,
+  FaInfo,
+} from "react-icons/fa";
+
 export default function Header() {
   return (
     <header className=" bg-gray-900 py-4 text-white border-b border-b-slate-300">
@@ -44,7 +49,7 @@ export default function Header() {
         {/* Le menu de connexion / pannier / a propos / favoris */}
         <div className="flex-1 flex justify-end gap-3 ">
           <div className="flex flex-col items-center gap-1">
-            <button className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition">
+            <Link to="/register" className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition">
               <FaUser
                 size={25}
                 className="text-white group-hover:text-black transition"
@@ -52,11 +57,11 @@ export default function Header() {
               <span className="text-xs mt-1 text-white group-hover:text-black transition">
                 COMPTE
               </span>
-            </button>
+            </Link>
           </div>
           {/* Menu pannier  */}
           <div className="flex flex-col items-center">
-            <button className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition">
+            <Link to="/order" className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition">
               <FaShoppingCart
                 size={25}
                 className="text-white group-hover:text-black transition"
@@ -64,11 +69,11 @@ export default function Header() {
               <span className="text-xs mt-1 text-white group-hover:text-black transition">
                 PANIER
               </span>
-            </button>
+            </Link>
           </div>
           {/* Menu a propos  */}
           <div className="flex flex-col items-center">
-            <button className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition">
+            <Link to="/about" className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition">
               <FaInfo
                 size={25}
                 className="text-white group-hover:text-black transition"
@@ -76,7 +81,7 @@ export default function Header() {
               <span className="text-xs mt-1 text-white group-hover:text-black transition">
                 À PROPOS
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
