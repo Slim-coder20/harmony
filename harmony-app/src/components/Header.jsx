@@ -49,7 +49,10 @@ export default function Header() {
         {/* Le menu de connexion / pannier / a propos / favoris */}
         <div className="flex-1 flex justify-end gap-3 ">
           <div className="flex flex-col items-center gap-1">
-            <Link to="/register" className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition">
+            <Link
+              to="/register"
+              className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition"
+            >
               <FaUser
                 size={25}
                 className="text-white group-hover:text-black transition"
@@ -61,7 +64,10 @@ export default function Header() {
           </div>
           {/* Menu pannier  */}
           <div className="flex flex-col items-center">
-            <Link to="/order" className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition">
+            <Link
+              to="/order"
+              className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition"
+            >
               <FaShoppingCart
                 size={25}
                 className="text-white group-hover:text-black transition"
@@ -73,7 +79,10 @@ export default function Header() {
           </div>
           {/* Menu a propos  */}
           <div className="flex flex-col items-center">
-            <Link to="/about" className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition">
+            <Link
+              to="/about"
+              className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition"
+            >
               <FaInfo
                 size={25}
                 className="text-white group-hover:text-black transition"
