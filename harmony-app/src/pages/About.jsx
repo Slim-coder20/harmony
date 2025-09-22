@@ -131,7 +131,7 @@ export default function About() {
           {Cards.map((card) => (
             <div
               key={card.id}
-              className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+              className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
             >
               <h3 className="text-xl font-bold mb-4 text-gray-800">
                 {card.title}
@@ -139,7 +139,7 @@ export default function About() {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {card.content}
               </p>
-              <button className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2 rounded transition-colors duration-300">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded transition-colors duration-300 cursor-pointer">
                 VOIR PLUS
               </button>
             </div>

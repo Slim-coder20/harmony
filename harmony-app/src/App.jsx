@@ -4,12 +4,13 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import Register from "./pages/Register";
+import Register from "./pages/connexion/Register";
 import Order from "./pages/Order";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Carrousel from "./components/Carrousel";
+import Login from "./pages/connexion/Login";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/order" element={<Order />} />
         <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
 
       <Footer />
