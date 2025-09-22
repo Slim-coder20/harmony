@@ -36,10 +36,8 @@ export default function About() {
   ];
   return (
     <div className=" min-h-screen">
-      {/* Contenu spécifique de la page About  */}
-
+      {/* Navigation menu about  */}
       <div className=" w-full bg-blue-800 p-8 text-white font-normal">
-        {/* Navigation menu about  */}
         <ul className=" flex justify-center gap-10 ">
           <li>
             <Link
@@ -51,7 +49,7 @@ export default function About() {
           </li>
           <li>
             <Link
-              to="/"
+              to="/contact"
               className="text-2xl hover:font-bold transition duration-300"
             >
               CONTACT
@@ -59,7 +57,7 @@ export default function About() {
           </li>
           <li>
             <Link
-              to="/"
+              to="/equipe"
               className="text-2xl hover:font-bold transition duration-300"
             >
               L'ÉQUIPE{" "}
@@ -67,7 +65,7 @@ export default function About() {
           </li>
           <li>
             <Link
-              to="/"
+              to="/harmony-store"
               className="text-2xl hover:font-bold transition duration-300"
             >
               HARMONY STORE
@@ -75,7 +73,7 @@ export default function About() {
           </li>
           <li>
             <Link
-              to="/"
+              to="/logistique"
               className="text-2xl hover:font-bold transition duration-300"
             >
               LOGISTIQUE

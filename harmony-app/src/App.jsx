@@ -5,13 +5,16 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Register from "./pages/connexion/Register";
+import Login from "./pages/connexion/Login";
+import ForgotPassword from "./pages/connexion/ForgotPassword";
+import Carrousel from "./components/Carrousel";
 import Order from "./pages/Order";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
-import Carrousel from "./components/Carrousel";
-import Login from "./pages/connexion/Login";
-import ForgotPassword from "./pages/connexion/ForgotPassword";
+import Contact from "./pages/Contact";
+import Team from "./pages/Team";
+import HarmonyStore from "./pages/HarmonyStore";
 
 export default function App() {
   return (
@@ -27,6 +30,9 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/equipe" element={<Team />} />
+        <Route path="/harmony-store" element={<HarmonyStore/>}/>
       </Routes>
 
       <Footer />
