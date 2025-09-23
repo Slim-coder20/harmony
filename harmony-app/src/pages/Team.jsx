@@ -41,7 +41,7 @@ export default function Equipe() {
       category: "MARKETING ET DIGITAL ",
       members: [
         {
-          name: "Le Molina",
+          name: "Léa Molina",
           description: "Graphiste",
           image: "Lea-Molina.jpg",
         },

@@ -102,7 +102,7 @@ export default function Contact() {
         <h3 className="font-bold text-3xl">
           COMMANDE PAR TÉLÉPHONE, CONSEILS PRODUITS
         </h3>
-        <p className="mt-2 text-gray-700 text-center text-2xl">
+        <p className="mt-2 text-gray-700 text-center text-[20px]">
           Vous désirez passer une commande par téléphone, connaître la
           disponibilité d'un produit sur internet ou un conseil, contactez nos
           conseillers, ils sont tous musiciens ! Vous pouvez aussi nous écrire
