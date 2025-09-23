@@ -120,7 +120,7 @@ export default function Contact() {
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
         <form
           onSubmit={handleSubmit}
-          className="bg-white p-6 rounded-lg shadow-lg"
+          className="bg-white p-6 rounded-lg shadow-lg mb-5"
         >
           <div className="mb-4">
             <label
