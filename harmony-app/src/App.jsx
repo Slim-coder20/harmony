@@ -15,6 +15,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Team from "./pages/Team";
 import HarmonyStore from "./pages/HarmonyStore";
+import Guitare from "./pages/articles/Guitare";
 
 export default function App() {
   return (
@@ -32,7 +33,8 @@ export default function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/equipe" element={<Team />} />
-        <Route path="/harmony-store" element={<HarmonyStore/>}/>
+        <Route path="/harmony-store" element={<HarmonyStore />} />
+        <Route path="/guitare" element={<Guitare/>} />
       </Routes>
 
       <Footer />

@@ -5,7 +5,7 @@ export default function Nav() {
     <nav className="flex justify-center items-center p-5 text-white bg-gray-900">
       <ul className="flex gap-6 items-center text-lg font-medium">
         <li>
-          <Link to="/" className="hover:text-blue-400 transition">
+          <Link to="/guitare" className="hover:text-blue-400 transition">
             Guitares
           </Link>
         </li>
