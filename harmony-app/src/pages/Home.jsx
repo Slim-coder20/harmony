@@ -22,7 +22,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       model: "Etude Cs40 3-4",
       price: 300,
       monthly: 30,
-      image: "/trompete1.jpg",
+      image: "home/trompete1.jpg",
       badge: "TOP VENTES",
       stock: ["Stock Internet", "Magasins Paris"],
     },
@@ -32,7 +32,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       model: "Etude Cs40 3-4",
       price: 3500,
       monthly: 120,
-      image: "/fodera1.jpg",
+      image: "home/fodera1.jpg",
       badge: "TOP VENTES",
       stock: ["Stock Internet", "Magasins Paris"],
     },
@@ -42,7 +42,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       model: "AS 113 BS ",
       price: 2500,
       monthly: 30,
-      image: "/ibanez1.jpg",
+      image: "home/ibanez1.jpg",
       badge: "TOP VENTES",
       stock: ["Stock Internet", "Magasins Paris"],
     },
@@ -52,7 +52,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       model: "PF 15 NT",
       price: 178,
       monthly: 25,
-      image: "/ibanez2.jpg",
+      image: "home/ibanez2.jpg",
       badge: "TOP VENTES",
       stock: ["Stock Internet", "Magasins Paris"],
     },
@@ -62,7 +62,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       model: "Etude Cs40 3-4",
       price: 2500,
       monthly: 85,
-      image: "/dw1.webp",
+      image: "home/dw1.webp",
       badge: "TOP VENTES",
       stock: ["Stock Internet", "Magasins Paris"],
     },
@@ -72,7 +72,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       model: "Piano a queue ",
       price: 5000,
       monthly: 250,
-      image: "/pianoimperial.jpg",
+      image: "home/pianoimperial.jpg",
       badge: "TOP VENTES",
       stock: ["Stock Internet", "Magasins Paris"],
     },
@@ -85,7 +85,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       model: "MK3",
       price: 600,
       monthly: 55,
-      image: "/MK3.avif",
+      image: "home/MK3.avif",
       badge: "NOUVEAUTÉ",
       stock: ["Stock Internet", "Magasins Paris"],
     },
@@ -95,7 +95,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       model: "CURV 500 PS ",
       price: 2800,
       monthly: 86,
-      image: "/Ldsystem.jpg",
+      image: "home/Ldsystem.jpg",
       badge: "NOUVEAUTÉ",
       stock: ["Stock Internet", "Magasins Paris"],
     },
@@ -105,7 +105,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       model: "Orange Super Crush 100 Head",
       price: 800,
       monthly: 58,
-      image: "/orangeamp.webp",
+      image: "home/orangeamp.webp",
       badge: "NOUVEAUTÉ",
       stock: ["Stock Internet", "Magasins Paris"],
     },
@@ -115,7 +115,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       model: "Korg microKey-2",
       price: 86,
       monthly: 25,
-      image: "/korgmicro.jpg",
+      image: "home/korgmicro.jpg",
       badge: "NOUVEAUTÉ",
       stock: ["Stock Internet", "Magasins Paris"],
     },
@@ -125,7 +125,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       model: "fender stratocaster",
       price: 1500,
       monthly: 45,
-      image: "/stratofender.jpg",
+      image: "home/stratofender.jpg",
       badge: "NOUVEAUTÉ",
       stock: ["Stock Internet", "Magasins Paris"],
     },
@@ -135,37 +135,37 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
     {
       id: 1,
       name: "Yamaha",
-      image: "/yamahalogo.jpg",
+      image: "home/yamahalogo.jpg",
     },
     {
       id: 2,
       name: "Ibanez",
-      image: "/ibanezLogo.png",
+      image: "home/ibanezLogo.png",
     },
     {
       id: 3,
       name: "Gibson",
-      image: "/gibsonlogo.png",
+      image: "home/gibsonlogo.png",
     },
     {
       id: 4,
       name: "Fender",
-      image: "/fenderlogo.png",
+      image: "home/fenderlogo.png",
     },
     {
       id: 5,
       name: "Korg",
-      image: "/korglogo.webp",
+      image: "home/korglogo.webp",
     },
     {
       id: 6,
       name: "Shure",
-      image: "/shurelogo.png",
+      image: "home/shurelogo.png",
     },
     {
       id: 7,
       name: "Fodera",
-      image: "/fodera.gif",
+      image: "home/fodera.gif",
     },
   ];
 
@@ -296,7 +296,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       <div className="grid grid-cols-3 bg-black w-full min-h-[350px]">
         {/* Colonne 1 : image de fond + texte */}
         <div className="relative col-span-1 flex items-center">
-          <div className="absolute inset-0 bg-[url('/carousel4.webp')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-[url('home/carousel4.webp')] bg-cover bg-center"></div>
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="relative z-10 p-12">
             <p className="text-white text-3xl font-light">
@@ -314,7 +314,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
           <span className=" text-2xl text-white mt-2">STORES</span>
         </div>
         <div className="relative col-span-1 flex items-center">
-          <div className="absolute inset-0 bg-[url('/imagecarousel3.webp')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-[url('home/imagecarousel3.webp')] bg-cover bg-center"></div>
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="relative z-10 p-12">
             <p className="text-white text-3xl font-light text-center ">

@@ -192,7 +192,7 @@ export default function Footer() {
         {/* Logo */}
         <div className="mt-10">
           <img
-            src="/Logo.png"
+            src="home/Logo.png"
             alt="Logo"
             className="mx-auto w-32 flex items-center"
           />
