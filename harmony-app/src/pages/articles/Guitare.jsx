@@ -16,11 +16,11 @@ export default function Guitare() {
         },
         {
           name: "Ibanez",
-          description: "GIO GRX70QA-TRB",       
-          image:"guitares/ibanez.webp",
+          description: "GIO GRX70QA-TRB",
+          image: "guitares/ibanez.webp",
           price: "780",
           monthly: 35,
-          stock:["Stock Internet", "Magasins Paris"],
+          stock: ["Stock Internet", "Magasins Paris"],
         },
         {
           name: "Harley Benton",
@@ -30,13 +30,12 @@ export default function Guitare() {
           monthly: "25",
           stock: ["Stock Internet", "Magasins Paris"],
         },
-          
       ],
     },
     {
       category: "Guitares Accoustique",
       model: [
-         {
+        {
           name: "Yamaha",
           description: "F310",
           image: "guitares/yamaha-f310.jpg",
@@ -44,7 +43,7 @@ export default function Guitare() {
           monthly: "45",
           stock: ["Stock Internet", "Magasins Paris"],
         },
-         {
+        {
           name: "Takamine",
           description: "SD25",
           image: "guitares/sd25.jpg",
@@ -52,7 +51,7 @@ export default function Guitare() {
           monthly: "25",
           stock: ["Stock Internet", "Magasins Paris"],
         },
-         {
+        {
           name: "Gisbson",
           description: "J-45 Standard",
           image: "guitares/gibson-accoustique.jpeg",
@@ -60,13 +59,12 @@ export default function Guitare() {
           monthly: "150",
           stock: ["Stock Internet", "Magasins Paris"],
         },
-       
       ],
     },
     {
       category: "Guitares classique",
       model: [
-       {
+        {
           name: "Silvanez",
           description: "CL44-NAT",
           image: "guitares/classique1.jpeg",
@@ -74,7 +72,7 @@ export default function Guitare() {
           monthly: "90",
           stock: ["Stock Internet", "Magasins Paris"],
         },
-       {
+        {
           name: "Yamaha",
           description: "CGS102",
           image: "guitares/classique2.jpg",
@@ -82,7 +80,7 @@ export default function Guitare() {
           monthly: "120",
           stock: ["Stock Internet", "Magasins Paris"],
         },
-       {
+        {
           name: "Yamaha",
           description: "C40 Black",
           image: "guitares/classique3.jpg",
@@ -111,12 +109,15 @@ export default function Guitare() {
                 <div className=" flex items-center gap-2 mb-2">
                   <span className=" text-2xl font-bold">{item.price}€</span>
                   <h3 className=" font-semibold">
-                    ou 
+                    ou
                     <span className="text-blue-600 font-bold text-lg">
                       {item.monthly}€ / mois
                     </span>
                   </h3>
                 </div>
+                <button className=" bg-blue-500 p-3 rounded text-white font-bold cursor-pointer hover:bg-blue-800 ">
+                  Ajouter au panier
+                </button>
               </div>
             ))}
           </div>

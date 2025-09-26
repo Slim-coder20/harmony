@@ -14,31 +14,31 @@ export default function Carrousel() {
         <CarouselContent>
           <CarouselItem>
             <img
-              src="home/img1.jpg"
+              src="/home/img1.jpg"
               alt="Promo 1"
-              className="w-full h-[400px] object-cover rounded-lg"
+              className="w-full h-48 sm:h-64 md:h-80 lg:h-[400px] object-cover rounded-lg"
             />
           </CarouselItem>
           <CarouselItem>
             <img
-              src="home/img2.jpg"
+              src="/home/img2.jpg"
               alt="Promo 2"
-              className="w-full h-[400px] object-cover rounded-lg"
+              className="w-full h-48 sm:h-64 md:h-80 lg:h-[400px] object-cover rounded-lg"
             />
           </CarouselItem>
           <CarouselItem>
-              <img src="home/imagecarousel3.webp" 
-                    alt="image d'instrument batterie " 
-                    className="w-full h-[400px] object-cover rounded-lg"
-              
-              />
+            <img 
+              src="/home/imagecarousel3.webp" 
+              alt="image d'instrument batterie" 
+              className="w-full h-48 sm:h-64 md:h-80 lg:h-[400px] object-cover rounded-lg"
+            />
           </CarouselItem>
           <CarouselItem>
-              <img src="home/carousel4.webp" 
-                    alt="image d'instrument batterie " 
-                    className="w-full h-[400px] object-cover rounded-lg"
-              
-              />
+            <img 
+              src="/home/carousel4.webp" 
+              alt="image d'instrument batterie" 
+              className="w-full h-48 sm:h-64 md:h-80 lg:h-[400px] object-cover rounded-lg"
+            />
           </CarouselItem>
         </CarouselContent>
         <CarouselPrevious size="icon" className="w-12 h-12 cursor-pointer" />

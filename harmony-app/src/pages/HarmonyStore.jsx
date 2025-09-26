@@ -4,15 +4,15 @@ export default function HarmonyStore() {
   const stores = [
     {
       title: "GUITARES & BASSES",
-      image: "home/boutique1.jpeg",
+      image: "/home/boutique1.jpeg",
     },
     {
       title: "BATTERIES & PERCUSSIONS",
-      image: "home/boutique2.webp",
+      image: "/home/boutique2.webp",
     },
     {
       title: "CLAVERS & HOME STUDIO",
-      image: "home/boutique3.avif",
+      image: "/home/boutique3.avif",
     },
   ];
   return (

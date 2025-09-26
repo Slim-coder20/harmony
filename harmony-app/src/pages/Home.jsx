@@ -229,7 +229,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
         Découvrez ici les meilleures ventes par univers !
       </h2>
       {/* Les meilleures ventes Card */}
-      <div className=" grid grid-cols-5 sm:grid-cols-2 lg:grid-cols-3 gap-4 flex-wrap mt-5 ">
+      <div className=" grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 flex-wrap mt-5 ">
         {products.map((product) => (
           <div
             key={product.id}
@@ -296,7 +296,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       <div className="grid grid-cols-3 bg-black w-full min-h-[350px]">
         {/* Colonne 1 : image de fond + texte */}
         <div className="relative col-span-1 flex items-center">
-          <div className="absolute inset-0 bg-[url('home/carousel4.webp')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-[url('/home/carousel4.webp')] bg-cover bg-center"></div>
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="relative z-10 p-12">
             <p className="text-white text-3xl font-light">
@@ -314,7 +314,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
           <span className=" text-2xl text-white mt-2">STORES</span>
         </div>
         <div className="relative col-span-1 flex items-center">
-          <div className="absolute inset-0 bg-[url('home/imagecarousel3.webp')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-[url('/home/imagecarousel3.webp')] bg-cover bg-center"></div>
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="relative z-10 p-12">
             <p className="text-white text-3xl font-light text-center ">
@@ -392,7 +392,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
         Voici les marques les plus recherchées par les musiciens
       </h2>
       {/* Container principale  */}
-      <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6">
         {brands.map((brand) => (
           <div
             key={brand.id}
