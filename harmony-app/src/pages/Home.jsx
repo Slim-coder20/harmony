@@ -10,167 +10,20 @@ import {
 import Carrousel from "../components/Carrousel";
 import ProductCard from "@/components/ProductCard";
 import { guitareProducts } from "@/data/guitares";
+import { homeBestSellers, homeNewProducts, popularBrands } from "@/data/home";
 
 export default function Home() {
-  /* Variable : je créé un tableau d'objets de produits qui me permettra d'afficher dynamiquement 
-les cartes des meilleurs ventes des produits en utilisant la méthode map() : cette méthode permet 
-facilement d'itérer sur des données et de retourner un tableau d'éléments
-*/
-
+  // Construire la liste "meilleures ventes" à partir des guitares et des entrées spécifiques à la home
   const products = [
     ...guitareProducts,
-    {
-      id: 1,
-      name: "Yamaha",
-      model: "Etude Cs40 3-4",
-      price: 300,
-      monthly: 30,
-      image: "home/trompete1.jpg",
-      badge: "TOP VENTES",
-      stock: ["Stock Internet", "Magasins Paris"],
-    },
-    {
-      id: 2,
-      name: "Fodera ",
-      model: "Etude Cs40 3-4",
-      price: 3500,
-      monthly: 120,
-      image: "home/fodera1.jpg",
-      badge: "TOP VENTES",
-      stock: ["Stock Internet", "Magasins Paris"],
-    },
-    {
-      id: 3,
-      name: "Ibanez",
-      model: "AS 113 BS ",
-      price: 2500,
-      monthly: 30,
-      image: "home/ibanez1.jpg",
-      badge: "TOP VENTES",
-      stock: ["Stock Internet", "Magasins Paris"],
-    },
-    {
-      id: 4,
-      name: "Ibanez ",
-      model: "PF 15 NT",
-      price: 178,
-      monthly: 25,
-      image: "home/ibanez2.jpg",
-      badge: "TOP VENTES",
-      stock: ["Stock Internet", "Magasins Paris"],
-    },
-    {
-      id: 5,
-      name: "DW",
-      model: "Etude Cs40 3-4",
-      price: 2500,
-      monthly: 85,
-      image: "home/dw1.webp",
-      badge: "TOP VENTES",
-      stock: ["Stock Internet", "Magasins Paris"],
-    },
-    {
-      id: 6,
-      name: "Imperial",
-      model: "Piano a queue ",
-      price: 5000,
-      monthly: 250,
-      image: "home/pianoimperial.jpg",
-      badge: "TOP VENTES",
-      stock: ["Stock Internet", "Magasins Paris"],
-    },
+    ...homeBestSellers,
   ];
 
-  const newProducts = [
-    {
-      id: 1,
-      name: "NATIVE INSTRUMENTS MASCHINE MK3",
-      model: "MK3",
-      price: 600,
-      monthly: 55,
-      image: "home/MK3.avif",
-      badge: "NOUVEAUTÉ",
-      stock: ["Stock Internet", "Magasins Paris"],
-    },
-    {
-      id: 2,
-      name: "LD system",
-      model: "CURV 500 PS ",
-      price: 2800,
-      monthly: 86,
-      image: "home/Ldsystem.jpg",
-      badge: "NOUVEAUTÉ",
-      stock: ["Stock Internet", "Magasins Paris"],
-    },
-    {
-      id: 3,
-      name: "Orange",
-      model: "Orange Super Crush 100 Head",
-      price: 800,
-      monthly: 58,
-      image: "home/orangeamp.webp",
-      badge: "NOUVEAUTÉ",
-      stock: ["Stock Internet", "Magasins Paris"],
-    },
-    {
-      id: 4,
-      name: "Korg",
-      model: "Korg microKey-2",
-      price: 86,
-      monthly: 25,
-      image: "home/korgmicro.jpg",
-      badge: "NOUVEAUTÉ",
-      stock: ["Stock Internet", "Magasins Paris"],
-    },
-    {
-      id: 5,
-      name: "Fender",
-      model: "fender stratocaster",
-      price: 1500,
-      monthly: 45,
-      image: "home/stratofender.jpg",
-      badge: "NOUVEAUTÉ",
-      stock: ["Stock Internet", "Magasins Paris"],
-    },
-  ];
+  // Nouveautés
+  const newProducts = homeNewProducts;
 
-  const brands = [
-    {
-      id: 1,
-      name: "Yamaha",
-      image: "home/yamahalogo.jpg",
-    },
-    {
-      id: 2,
-      name: "Ibanez",
-      image: "home/ibanezLogo.png",
-    },
-    {
-      id: 3,
-      name: "Gibson",
-      image: "home/gibsonlogo.png",
-    },
-    {
-      id: 4,
-      name: "Fender",
-      image: "home/fenderlogo.png",
-    },
-    {
-      id: 5,
-      name: "Korg",
-      image: "home/korglogo.webp",
-    },
-    {
-      id: 6,
-      name: "Shure",
-      image: "home/shurelogo.png",
-    },
-    {
-      id: 7,
-      name: "Fodera",
-      image: "home/fodera.gif",
-    },
-  ];
+  // Marques populaires
+  const brands = popularBrands;
 
   return (
     <div className=" bg-white py-9">
@@ -234,8 +87,11 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       {/* Les meilleures ventes Card */}
       <div className=" grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 flex-wrap mt-5 ">
         {products.map((product) => (
-          <ProductCard item={product} topVente={true} />
-         
+          <ProductCard
+            key={product.id}
+            item={product}
+            topVente={product.badge === "TOP VENTES"}
+          />
         ))}
       </div>
       {/* Banniere publicitaire 1  */}
@@ -285,9 +141,11 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       {/* Les nouveaux produits Card */}
       <div className=" flex overflow-x-auto gap-4 pb-4 scrollbar-hide ">
         {newProducts.map((product) => (
-          // la carte //
-          <ProductCard item={product} />
-         
+          <ProductCard
+            key={product.id}
+            item={product}
+            topVente={product.badge === "TOP VENTES"}
+          />
         ))}
       </div>
 
@@ -303,7 +161,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
             className="flex items-center justify-center p-4 bg-white cursor-pointer"
           >
             <img
-              src={brand.image}
+              src={brand.image?.startsWith("/") ? brand.image : `/${brand.image}`}
               alt={brand.name}
               className="h-16 w-auto object-contain "
             />
