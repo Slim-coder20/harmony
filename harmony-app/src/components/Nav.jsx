@@ -15,7 +15,7 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/" className="hover:text-blue-400 transition">
+          <Link to="/basse" className="hover:text-blue-400 transition">
             Basses
           </Link>
         </li>
