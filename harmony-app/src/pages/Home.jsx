@@ -8,6 +8,8 @@ import {
   FaTruck,
 } from "react-icons/fa";
 import Carrousel from "../components/Carrousel";
+import ProductCard from "@/components/ProductCard";
+import { guitareProducts } from "@/data/guitares";
 
 export default function Home() {
   /* Variable : je créé un tableau d'objets de produits qui me permettra d'afficher dynamiquement 
@@ -16,6 +18,7 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
 */
 
   const products = [
+    ...guitareProducts,
     {
       id: 1,
       name: "Yamaha",
@@ -231,57 +234,8 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       {/* Les meilleures ventes Card */}
       <div className=" grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 flex-wrap mt-5 ">
         {products.map((product) => (
-          <div
-            key={product.id}
-            className="bg-white rounded-lg shadow p-4 flex flex-col relative"
-          >
-            {/*  Badge */}
-            <span className=" absolute top-2 left-2 bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-bold">
-              TOP VENTES
-            </span>
-            {/* Image du produit  */}
-            <img
-              src={product.image}
-              alt={product.model}
-              className=" object-contain h-40 w-full mb-4"
-            />
-            {/* Nom et modèle */}
-            <h3 className=" font-semibold text-lg">{product.name}</h3>
-            {/* Prix principal et prix mensule  */}
-            <div className=" flex items-center gap-2 mb-2">
-              <span className=" text-2xl font-bold">{product.price}€</span>
-              <h3 className=" font-semibold">
-                ou
-                <span className="text-blue-600 font-bold text-lg">
-                  {product.monthly}
-                </span>
-              </h3>
-            </div>
-            {/* Stock et disponibilité */}
-            <div className="flex flex-col gap-1 text-green-500 text-xs mb-2">
-              {product.stock.map((s, i) => (
-                <span key={i}>● {s}</span>
-              ))}
-            </div>
-            {/* Bouton favori */}
-            <button className="absolute bottom-2 right-2 bg-white rounded-full shadow p-2 cursor-pointer ">
-              <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="currentColor"
-                className=""
-              >
-                <path
-                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
-                2 5.42 4.42 3 7.5 3c1.74 0 3.41 1.01 4.5 2.09
-                C13.09 4.01 14.76 3 16.5 3
-                19.58 3 22 5.42 22 8.5
-                c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                />
-              </svg>
-            </button>
-          </div>
+          <ProductCard item={product} topVente={true} />
+         
         ))}
       </div>
       {/* Banniere publicitaire 1  */}
@@ -332,58 +286,8 @@ facilement d'itérer sur des données et de retourner un tableau d'éléments
       <div className=" flex overflow-x-auto gap-4 pb-4 scrollbar-hide ">
         {newProducts.map((product) => (
           // la carte //
-          <div
-            key={product.id}
-            className="flex-shrink-0 w-64 bg-white rounded-lg shadow ml-2 relative"
-          >
-            {/*  Badge Nouveauté */}
-            <span className=" absolute top-2 left-2 bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold">
-              {product.badge}
-            </span>
-            {/* Image du produit  */}
-            <img
-              src={product.image}
-              alt={product.model}
-              className=" object-contain h-40 w-full mb-4"
-            />
-            {/* Nom et modèle */}
-            <h3 className=" font-semibold text-lg">{product.name}</h3>
-            <p className=" text-gray-600 text-sm mb-2">{product.model}</p>
-            {/* Prix principal et prix mensuel  */}
-            <div className=" flex items-center gap-2 mb-2">
-              <span className=" text-2xl font-bold">{product.price}€</span>
-              <h3 className=" font-semibold">
-                ou
-                <span className="text-blue-600 font-bold text-lg">
-                  {product.monthly}€/mois
-                </span>
-              </h3>
-            </div>
-            {/* Stock et disponibilité */}
-            <div className="flex flex-col gap-1 text-green-500 text-xs mb-2">
-              {product.stock.map((s, i) => (
-                <span key={i}>● {s}</span>
-              ))}
-            </div>
-            {/* Bouton favori */}
-            <button className="absolute bottom-2 right-2 bg-white rounded-full shadow p-2 cursor-pointer ">
-              <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="currentColor"
-                className=""
-              >
-                <path
-                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
-                  2 5.42 4.42 3 7.5 3c1.74 0 3.41 1.01 4.5 2.09
-                  C13.09 4.01 14.76 3 16.5 3
-                  19.58 3 22 5.42 22 8.5
-                  c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                />
-              </svg>
-            </button>
-          </div>
+          <ProductCard item={product} />
+         
         ))}
       </div>
 

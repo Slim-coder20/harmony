@@ -11,6 +11,7 @@ import Login from "@/pages/connexion/Login";
 import ForgotPassword from "@/pages/connexion/ForgotPassword";
 import Order from "@/pages/Order";
 import Guitare from "@/pages/articles/Guitare";
+import Product from "./pages/Product";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <Route element={<RootLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/product/:productId" element={<Product />} />
         <Route path="/order" element={<Order />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
