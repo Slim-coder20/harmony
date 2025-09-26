@@ -21,7 +21,7 @@ export default function Guitare() {
             <h2 className="text-2xl mb-4">{labelByCategory[cat]}</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
               {items.map((item) => (
-                <ProductCard item={item} />
+                <ProductCard item={item} topVente={item.badge === "TOP VENTES"} />
               ))}
             </div>
           </div>
