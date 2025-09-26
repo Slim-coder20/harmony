@@ -1,23 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import ProductCard from '@/components/ProductCard';
 import { guitareProducts } from "@/data/guitares";
+import ProductDetail from "@/components/ProductDetail";
+import { homeBestSellers, homeNewProducts, popularBrands } from "@/data/home";
 
 export default function Product() {
-  let params = useParams(); 
-  let {productId} = params;
-  const [item, setItem] = useState()
+  const { productId } = useParams();
+  const [item, setItem] = useState();
 
   useEffect(() => {
-    const item = guitareProducts.find((p) => p.id === productId);
-    setItem(item);
-  }, [productId])
+    // Rechercher dans toutes les sources connues (guitares + données Home)
+    const allProducts = [...guitareProducts, ...homeBestSellers, ...homeNewProducts];
+    const found = allProducts.find((p) => p.id === productId);
+    setItem(found);
+  }, [productId]);
 
+  if (!item) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-gray-600">
+        Produit introuvable
+      </div>
+    );
+  }
 
-  return (
-    <div>
-      Product
-      {item && <ProductCard item={item} />}
-    </div>
-  )
+  return <ProductDetail item={item} homeBestSellers={homeBestSellers} homeNewProducts={homeNewProducts} popularBrands={popularBrands} guitareProducts={guitareProducts} />;
 }
