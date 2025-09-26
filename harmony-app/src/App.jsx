@@ -11,8 +11,9 @@ import Login from "@/pages/connexion/Login";
 import ForgotPassword from "@/pages/connexion/ForgotPassword";
 import Order from "@/pages/Order";
 import Guitare from "@/pages/articles/Guitare";
-import Product from "./pages/Product";
-import Basse from "./pages/articles/Basse";
+import Product from "@/pages/Product";
+import Basse from "@/pages/articles/Basse";
+import Effet from "@/pages/articles/Effet";
 
 export default function App() {
   return (
@@ -29,7 +30,7 @@ export default function App() {
         <Route path="/harmony-store" element={<HarmonyStore />} />
         <Route path="/guitare" element={<Guitare />} />
         <Route path="/basse" element={<Basse />} />
-        
+        <Route path="/effet" element={<Effet />} />
         {/* Auth sous le même layout pour garder Header/Nav/Footer */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

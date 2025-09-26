@@ -9,15 +9,13 @@ import {
 } from "react-icons/fa";
 import Carrousel from "../components/Carrousel";
 import ProductCard from "@/components/ProductCard";
-import { guitareProducts } from "@/data/guitares";
 import { homeBestSellers, homeNewProducts, popularBrands } from "@/data/home";
-import { bassProducts } from "@/data/basse";
 export default function Home() {
   // Construire la liste "meilleures ventes" à partir des guitares et des entrées spécifiques à la home
   const products = [
-    ...guitareProducts,
+  
     ...homeBestSellers,
-    ...bassProducts,
+  
   ];
 
   // Nouveautés

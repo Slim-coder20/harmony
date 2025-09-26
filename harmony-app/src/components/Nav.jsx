@@ -10,8 +10,8 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/" className="hover:text-blue-400 transition">
-            Amplis / Effets
+          <Link to="/effet" className="hover:text-blue-400 transition">
+          Effets
           </Link>
         </li>
         <li>
@@ -20,17 +20,17 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/" className="hover:text-blue-400 transition">
-            Batterie / Percussions 
+          <Link to="/batterie" className="hover:text-blue-400 transition">
+            Batterie 
           </Link>
         </li>
         <li>
-          <Link to="/" className="hover:text-blue-400 transition">
+          <Link to="/clavier-piano" className="hover:text-blue-400 transition">
             Clavier / Piano 
           </Link>
         </li>
         <li>
-          <Link to="/" className="hover:text-blue-400 transition">
+          <Link to="/homestudio" className="hover:text-blue-400 transition">
             Homestudio
           </Link>
         </li>
