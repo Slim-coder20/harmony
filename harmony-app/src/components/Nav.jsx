@@ -30,7 +30,7 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/homestudio" className="hover:text-blue-400 transition">
+          <Link to="/home-studio" className="hover:text-blue-400 transition">
             Homestudio
           </Link>
         </li>

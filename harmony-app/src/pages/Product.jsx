@@ -7,6 +7,7 @@ import { bassProducts } from "@/data/basse";
 import { effetsProducts } from "@/data/effets";
 import { batterieProducts } from "@/data/batterie";
 import { pianoClavierProducts } from "@/data/pianoClavier";
+import { homeStudioProducts } from "@/data/homeStudio";
 
 export default function Product() {
   const { productId } = useParams();
@@ -22,6 +23,7 @@ export default function Product() {
       ...effetsProducts,
       ...batterieProducts,
       ...pianoClavierProducts,
+      ...homeStudioProducts,
     ];
     const found = allProducts.find((p) => p.id === productId);
     setItem(found);
@@ -46,6 +48,7 @@ export default function Product() {
       effetsProducts={effetsProducts}
       batterieProducts={batterieProducts}
       pianoClavierProducts={pianoClavierProducts}
+      homeStudioProducts={homeStudioProducts}
     />
   );
 }

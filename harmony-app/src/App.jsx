@@ -16,6 +16,7 @@ import Basse from "@/pages/articles/Basse";
 import Effet from "@/pages/articles/Effet";
 import Batterie from "@/pages/articles/Batterie"
 import PianoClavier from "@/pages/articles/PianoClavier";
+import HomeStudio from "@/pages/articles/HomeStudio";
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="/effet" element={<Effet />} />
         <Route path="/batterie" element={<Batterie />} />
         <Route path="/clavier-piano" element={<PianoClavier />} />
+        <Route path="/home-studio" element={<HomeStudio />} />
 
         {/* Auth sous le même layout pour garder Header/Nav/Footer */}
         <Route path="/login" element={<Login />} />
