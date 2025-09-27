@@ -5,6 +5,7 @@ import ProductDetail from "@/components/ProductDetail";
 import { homeBestSellers, homeNewProducts, popularBrands } from "@/data/home";
 import { bassProducts } from "@/data/basse";
 import { effetsProducts } from "@/data/effets";
+import { batterieProducts } from "@/data/batterie";
 
 export default function Product() {
   const { productId } = useParams();
@@ -12,7 +13,7 @@ export default function Product() {
 
   useEffect(() => {
     // Rechercher dans toutes les sources connues (guitares + données Home)
-    const allProducts = [...guitareProducts, ...homeBestSellers, ...homeNewProducts, ...bassProducts, ...effetsProducts];
+    const allProducts = [...guitareProducts, ...homeBestSellers, ...homeNewProducts, ...bassProducts, ...effetsProducts, ...batterieProducts];
     const found = allProducts.find((p) => p.id === productId);
     setItem(found);
   }, [productId]);
@@ -25,5 +26,5 @@ export default function Product() {
     );
   }
 
-  return <ProductDetail item={item} homeBestSellers={homeBestSellers} homeNewProducts={homeNewProducts} popularBrands={popularBrands} guitareProducts={guitareProducts} bassProducts={bassProducts} effetsProducts={effetsProducts}/>;
+  return <ProductDetail item={item} homeBestSellers={homeBestSellers} homeNewProducts={homeNewProducts} popularBrands={popularBrands} guitareProducts={guitareProducts} bassProducts={bassProducts} effetsProducts={effetsProducts} batterieProducts={batterieProducts}/>;
 }

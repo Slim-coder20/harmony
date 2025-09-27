@@ -10,11 +10,13 @@ import {
 import Carrousel from "../components/Carrousel";
 import ProductCard from "@/components/ProductCard";
 import { homeBestSellers, homeNewProducts, popularBrands } from "@/data/home";
+import { batterieProducts } from "@/data/batterie";
 export default function Home() {
   // Construire la liste "meilleures ventes" à partir des guitares et des entrées spécifiques à la home
   const products = [
   
     ...homeBestSellers,
+    ...batterieProducts,
   
   ];
 
