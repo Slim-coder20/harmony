@@ -6,8 +6,10 @@ import {
   FaBlog,
   FaInfo,
 } from "react-icons/fa";
+import { useCart } from "@/context/CartContext";
 
 export default function Header() {
+  const { totalCount } = useCart();
   return (
     <header className=" bg-gray-900 py-4 text-white border-b border-b-slate-300">
       {/* Logo */}
@@ -63,15 +65,22 @@ export default function Header() {
             </Link>
           </div>
           {/* Menu pannier  */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center relative">
             <Link
               to="/order"
               className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition"
             >
-              <FaShoppingCart
-                size={25}
-                className="text-white group-hover:text-black transition"
-              />
+              <div className="relative">
+                <FaShoppingCart
+                  size={25}
+                  className="text-white group-hover:text-black transition"
+                />
+                {totalCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full px-1.5 py-0.5">
+                    {totalCount}
+                  </span>
+                )}
+              </div>
               <span className="text-xs mt-1 text-white group-hover:text-black transition">
                 PANIER
               </span>
@@ -97,3 +106,4 @@ export default function Header() {
     </header>
   );
 }
+
