@@ -6,12 +6,15 @@ import {
   FaSearch,
   FaBlog,
   FaInfo,
+  FaHeart,
 } from "react-icons/fa";
 import { useCart } from "@/context/CartContext";
+import { useWishlist } from "@/context/WishlistContext";
 import { useState } from "react";
 
 export default function Header() {
   const { totalCount } = useCart();
+  const { totalCount: wishlistCount } = useWishlist();
   const navigate = useNavigate();
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [mobileQuery, setMobileQuery] = useState("");
@@ -78,6 +81,20 @@ export default function Header() {
             aria-label="Compte"
           >
             <FaUser size={18} />
+          </Link>
+
+          {/* Favoris */}
+          <Link
+            to="/wishlist"
+            className="relative inline-flex items-center justify-center w-10 h-10 rounded bg-gray-800 hover:bg-gray-700"
+            aria-label="Favoris"
+          >
+            <FaHeart size={18} />
+            {wishlistCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full min-w-[1.25rem] h-5 px-1.5 flex items-center justify-center">
+                {wishlistCount}
+              </span>
+            )}
           </Link>
 
           {/* Panier */}
