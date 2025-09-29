@@ -73,23 +73,26 @@ export default function Contact() {
       {/* Menu de navigation  */}
       <HorizontalMenu />
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-5xl font-bold text-blue-900">
+        <h2 className="mt-6 text-center text-3xl md:text-5xl font-bold text-blue-900">
           CONTACTEZ-NOUS
         </h2>
-        <p className="bg-blue-500 text-white p-5 text-center text-2xl font-bold mt-3 rounded-2xl ">
+        <a
+          href="tel:0132456874"
+          className="bg-blue-500 text-white flex items-center justify-center w-max mx-auto px-3 py-2 md:px-4 md:py-3 text-sm md:text-2xl font-semibold md:font-bold mt-3 rounded-md md:rounded-2xl shadow-sm active:scale-[.99]"
+        >
           01 32 45 68 74
-        </p>
+        </a>
       </div>
 
       {/* Section pour les horaires */}
-      <div className="mt-10 text-center">
-        <div className="flex justify-center items-center space-x-10 text-lg font-medium">
+      <div className="mt-8 md:mt-10 text-center">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10 text-base md:text-lg font-medium">
           <div>
             <p className="font-bold">LUNDI - VENDREDI</p>
             <p>9h00 - 18h00</p>
           </div>
-          {/* Trait vertical */}
-          <div className="border-l border-gray-400 h-10"></div>
+          {/* Trait vertical (affiché seulement en md+) */}
+          <div className="hidden md:block border-l border-gray-400 h-10"></div>
           <div>
             <p className="font-bold">SAMEDI</p>
             <p>10h00 - 18h00</p>
@@ -98,11 +101,11 @@ export default function Contact() {
       </div>
 
       {/* Section pour les conseils produits */}
-      <div className="mt-10 text-center">
-        <h3 className="font-bold text-3xl">
+      <div className="mt-10 text-center px-3">
+        <h3 className="font-bold text-xl md:text-3xl">
           COMMANDE PAR TÉLÉPHONE, CONSEILS PRODUITS
         </h3>
-        <p className="mt-2 text-gray-700 text-center text-[20px]">
+        <p className="mt-2 text-gray-700 text-center text-base md:text-[20px]">
           Vous désirez passer une commande par téléphone, connaître la
           disponibilité d'un produit sur internet ou un conseil, contactez nos
           conseillers, ils sont tous musiciens ! Vous pouvez aussi nous écrire
@@ -117,10 +120,10 @@ export default function Contact() {
       </div>
 
       {/* Formulaire de contact */}
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
+      <div className="mt-8 md:mt-10 sm:mx-auto sm:w-full sm:max-w-md px-3 sm:px-0">
         <form
           onSubmit={handleSubmit}
-          className="bg-white p-6 rounded-lg shadow-lg mb-5"
+          className="bg-white p-4 md:p-6 rounded-lg shadow-lg mb-5"
         >
           <div className="mb-4">
             <label
@@ -218,7 +221,7 @@ export default function Contact() {
 
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+            className="w-full h-10 md:h-12 bg-blue-500 text-white text-sm md:text-base rounded-md hover:bg-blue-600"
           >
             Envoyer
           </button>

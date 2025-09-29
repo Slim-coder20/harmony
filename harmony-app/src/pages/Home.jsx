@@ -34,51 +34,48 @@ export default function Home() {
       <h1 className="text-center text-3xl mt-4">
         Bienvenue chez <span className="text-blue-900">Harmony</span> !
       </h1>
-      <div className=" flex justify-center gap-12 mt-5">
-        {/* Réferencment  */}
-        <div className=" flex flex-col items-center text-center ">
-          <FaFlag className=" text-blue-500" size={48} />
-          <span className=" font-bold mt-2">N°1 français</span>
-          <span>des ventes d'instruments de musique</span>
-        </div>
-        {/* Paiement facilité  */}
-        <div className=" flex flex-col items-center text-center ">
-          <FaCreditCard className=" text-blue-500" size={48} />
-          <span className=" font-bold mt-2">3x, 4x sans frais</span>
-          <span>des ventes d'instruments de musique</span>
-          <span>
-            dès 50€ ou financez <br />
-            jusqu'a 12x
-          </span>
-        </div>
-        {/* disponibilité des articles  */}
-        <div className=" flex flex-col items-center text-center ">
-          <FaBoxes className=" text-blue-500" size={48} />
-          <span className=" font-bold mt-2">1 millions d'articles </span>
-          <span>en stock</span>
-        </div>
-        {/* Garantie  */}
-        <div className=" flex flex-col items-center text-center ">
-          <FaBoxes className=" text-blue-500" size={48} />
-          <span className=" font-bold mt-2">Garantie 3 ans </span>
-        </div>
-        {/* Livraison gratuite  */}
+      {/* Atouts: grille responsive */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-6 mt-6">
+        {/* Réferencement */}
         <div className="flex flex-col items-center text-center">
-          <FaTruck className="text-blue-500" size={48} />
-          <span className="font-bold mt-2">Livraison gratuite</span>
-          <span>dès 50€ d'achat</span>
+          <FaFlag className="text-blue-500" size={32} />
+          <span className="font-bold mt-2 text-sm md:text-base">N°1 français</span>
+          <span className="text-xs md:text-sm">des ventes d'instruments de musique</span>
         </div>
-        {/* Satisfait ou rembourssé  */}
+        {/* Paiement facilité */}
         <div className="flex flex-col items-center text-center">
-          <FaSmile className="text-blue-500" size={48} />
-          <span className="font-bold mt-2">30 jours</span>
-          <span>satisfait ou remboursé</span>
+          <FaCreditCard className="text-blue-500" size={32} />
+          <span className="font-bold mt-2 text-sm md:text-base">3x, 4x sans frais</span>
+          <span className="text-xs md:text-sm">dès 50€ ou financez jusqu'à 12x</span>
         </div>
-        {/* harmony store  */}
+        {/* disponibilité des articles */}
         <div className="flex flex-col items-center text-center">
-          <FaStore className="text-blue-500" size={48} />
-          <span className="font-bold mt-2">4 Harmony Stores</span>
-          <span>à Paris</span>
+          <FaBoxes className="text-blue-500" size={32} />
+          <span className="font-bold mt-2 text-sm md:text-base">1 million d'articles</span>
+          <span className="text-xs md:text-sm">en stock</span>
+        </div>
+        {/* Garantie */}
+        <div className="flex flex-col items-center text-center">
+          <FaBoxes className="text-blue-500" size={32} />
+          <span className="font-bold mt-2 text-sm md:text-base">Garantie 3 ans</span>
+        </div>
+        {/* Livraison gratuite */}
+        <div className="flex flex-col items-center text-center">
+          <FaTruck className="text-blue-500" size={32} />
+          <span className="font-bold mt-2 text-sm md:text-base">Livraison gratuite</span>
+          <span className="text-xs md:text-sm">dès 50€ d'achat</span>
+        </div>
+        {/* Satisfait ou remboursé */}
+        <div className="flex flex-col items-center text-center">
+          <FaSmile className="text-blue-500" size={32} />
+          <span className="font-bold mt-2 text-sm md:text-base">30 jours</span>
+          <span className="text-xs md:text-sm">satisfait ou remboursé</span>
+        </div>
+        {/* Harmony store */}
+        <div className="flex flex-col items-center text-center">
+          <FaStore className="text-blue-500" size={32} />
+          <span className="font-bold mt-2 text-sm md:text-base">4 Harmony Stores</span>
+          <span className="text-xs md:text-sm">à Paris</span>
         </div>
       </div>
       {/* Section des produits Meilleurs ventes */}
@@ -96,15 +93,15 @@ export default function Home() {
         ))}
       </div>
       {/* Banniere publicitaire 1  */}
-      <div className=" bg-blue-500 w-full p-24 mt-14">
-        <h2 className=" text-4xl text-white text-center font-light">
+      <div className=" bg-blue-500 w-full py-10 md:py-16 mt-14 px-4">
+        <h2 className=" text-2xl md:text-4xl text-white text-center font-light">
           Livraison <span className=" font-bold">gratuite</span> dès{" "}
           <span className=" font-bold">50€</span> d'achat en France
           Métropolitaine.
         </h2>
       </div>
       {/* Banniere publicitaire  2 */}
-      <div className="grid grid-cols-3 bg-black w-full min-h-[350px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 bg-black w-full min-h-[260px] md:min-h-[350px]">
         {/* Colonne 1 : image de fond + texte */}
         <div className="relative col-span-1 flex items-center">
           <div className="absolute inset-0 bg-[url('/home/carousel4.webp')] bg-cover bg-center"></div>
@@ -140,13 +137,14 @@ export default function Home() {
         Découvrez nos dernières nouveautés !
       </h2>
       {/* Les nouveaux produits Card */}
-      <div className=" flex overflow-x-auto gap-4 pb-4 scrollbar-hide ">
+      <div className="flex overflow-x-auto gap-3 md:gap-4 pb-3 md:pb-4 px-3 md:px-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ">
         {newProducts.map((product) => (
-          <ProductCard
-            key={product.id}
-            item={product}
-            topVente={product.badge === "TOP VENTES"}
-          />
+          <div key={product.id} className="snap-start min-w-[200px] sm:min-w-[220px]">
+            <ProductCard
+              item={product}
+              topVente={product.badge === "TOP VENTES"}
+            />
+          </div>
         ))}
       </div>
 
@@ -165,6 +163,8 @@ export default function Home() {
               src={brand.image?.startsWith("/") ? brand.image : `/${brand.image}`}
               alt={brand.name}
               className="h-16 w-auto object-contain "
+              loading="lazy"
+              decoding="async"
             />
           </div>
         ))}

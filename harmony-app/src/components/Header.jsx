@@ -25,27 +25,24 @@ export default function Header() {
     setMobileQuery("");
   }
   return (
-    <header className=" bg-gray-900 py-4 text-white sticky top-0 z-50">
+    <header className="bg-gray-900 text-white sticky top-0 z-50">
       {/* Logo */}
-      <div className="max-w-7xl mx-auto px-4 py-3 grid grid-cols-3 md:grid-cols-[auto_1fr_auto] items-center gap-3">
+      <div className="max-w-7xl mx-auto px-4 py-2 md:py-3 grid grid-cols-3 md:grid-cols-[auto_1fr_auto] items-center gap-3">
         {/* Gauche: Blog */}
         <div className="flex flex-row items-center gap-4 flex-1">
           <Link to="/">
             <img
               src="/home/Logo.png"
               alt="Logo Harmony"
-              className="h-20 cursor-pointer"
+              className="h-10 md:h-20 cursor-pointer"
             />
           </Link>
           {/* Menu blog  */}
-          <Link
-            to="/blog"
-            className=" px-4 py-2 rounded hover:bg-white hover:text-black transition ml-2 "
-          >
-            <div className=" flex flex-col items-center">
-              <FaBlog size={25} />
-            </div>
-            BLOG
+          <Link to="/blog" className="flex items-center gap-2 ml-2">
+            <span className="inline-flex items-center justify-center w-10 h-10 rounded bg-gray-800 hover:bg-gray-700">
+              <FaBlog size={18} />
+            </span>
+            <span className="hidden md:inline font-semibold">BLOG</span>
           </Link>
         </div>
 
@@ -73,66 +70,46 @@ export default function Header() {
           </div>
         </div>
         {/* Le menu de connexion / pannier / a propos / favoris */}
-        <div className="flex-1 flex justify-end gap-3 ">
-          <div className="flex flex-col items-center gap-1">
-            <Link
-              to="/register"
-              className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition"
-            >
-              <FaUser
-                size={25}
-                className="text-white group-hover:text-black transition"
-              />
-              <span className="text-xs mt-1 text-white group-hover:text-black transition">
-                COMPTE
+        <div className="flex-1 flex justify-end gap-2 md:gap-3 ">
+          {/* Compte */}
+          <Link
+            to="/register"
+            className="inline-flex items-center justify-center w-10 h-10 rounded bg-gray-800 hover:bg-gray-700"
+            aria-label="Compte"
+          >
+            <FaUser size={18} />
+          </Link>
+
+          {/* Panier */}
+          <Link
+            to="/order"
+            className="relative inline-flex items-center justify-center w-10 h-10 rounded bg-gray-800 hover:bg-gray-700"
+            aria-label="Panier"
+          >
+            <FaShoppingCart size={18} />
+            {totalCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full min-w-[1.25rem] h-5 px-1.5 flex items-center justify-center">
+                {totalCount}
               </span>
-            </Link>
-          </div>
-          {/* Menu pannier  */}
-          <div className="flex flex-col items-center relative">
-            <Link
-              to="/order"
-              className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition"
-            >
-              <div className="relative">
-                <FaShoppingCart
-                  size={25}
-                  className="text-white group-hover:text-black transition"
-                />
-                {totalCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full px-1.5 py-0.5">
-                    {totalCount}
-                  </span>
-                )}
-              </div>
-              <span className="text-xs mt-1 text-white group-hover:text-black transition">
-                PANIER
-              </span>
-            </Link>
-          </div>
-          {/* Menu a propos  */}
-          <div className="flex flex-col items-center">
-            <Link
-              to="/about"
-              className="flex flex-col items-center px-4 py-2 rounded hover:bg-white group transition"
-            >
-              <FaInfo
-                size={25}
-                className="text-white group-hover:text-black transition"
-              />
-              <span className="text-xs mt-1 text-white group-hover:text-black transition">
-                À PROPOS
-              </span>
-            </Link>
-          </div>
+            )}
+          </Link>
+
+          {/* À propos */}
+          <Link
+            to="/about"
+            className="inline-flex items-center justify-center w-10 h-10 rounded bg-gray-800 hover:bg-gray-700"
+            aria-label="À propos"
+          >
+            <FaInfo size={18} />
+          </Link>
         </div>
       </div>
 
       {/* Overlay de recherche mobile */}
       {mobileSearchOpen && (
         <div className="md:hidden fixed inset-0 z-50 bg-black/50" onClick={() => setMobileSearchOpen(false)}>
-          <div className="absolute top-16 left-0 right-0 px-4" onClick={(e) => e.stopPropagation()}>
-            <form onSubmit={handleMobileSearchSubmit} className="bg-white rounded shadow p-3 flex items-center gap-2">
+          <div className="absolute top-20 left-0 right-0 px-3" onClick={(e) => e.stopPropagation()}>
+            <form onSubmit={handleMobileSearchSubmit} className="bg-white rounded shadow p-2 flex flex-wrap items-center gap-2">
               <FaSearch className="text-gray-500" />
               <input
                 autoFocus
@@ -140,10 +117,12 @@ export default function Header() {
                 value={mobileQuery}
                 onChange={(e) => setMobileQuery(e.target.value)}
                 placeholder="Rechercher..."
-                className="flex-1 h-10 px-2 outline-none text-black"
+                className="w-full flex-1 min-w-0 h-10 px-2 outline-none text-black"
               />
-              <button type="button" onClick={() => setMobileSearchOpen(false)} className="px-3 h-10 rounded bg-gray-200 text-gray-800">Annuler</button>
-              <button type="submit" className="px-3 h-10 rounded bg-blue-600 text-white font-semibold">Rechercher</button>
+              <div className="flex w-full justify-end gap-2">
+                <button type="button" onClick={() => setMobileSearchOpen(false)} className="px-3 h-10 rounded bg-gray-200 text-gray-800 text-sm">Annuler</button>
+                <button type="submit" className="px-3 h-10 rounded bg-blue-600 text-white font-semibold text-sm">Rechercher</button>
+              </div>
             </form>
           </div>
         </div>
