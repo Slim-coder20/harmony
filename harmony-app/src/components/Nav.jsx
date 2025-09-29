@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+
+  // Auto-fermeture du menu 3s après ouverture
+  useEffect(() => {
+    if (!open) return;
+    const timer = setTimeout(() => setOpen(false), 2000);
+    return () => clearTimeout(timer);
+  }, [open]);
 
   return (
     <nav className="bg-gray-900 text-white">
@@ -30,22 +37,20 @@ export default function Nav() {
         {/* Liste desktop */}
         <ul className="hidden md:flex gap-6 items-center text-lg font-medium">
           <li><Link to="/guitare" className="hover:text-blue-400 transition">Guitares</Link></li>
-          <li><Link to="/effet" className="hover:text-blue-400 transition">Effets</Link></li>
           <li><Link to="/basse" className="hover:text-blue-400 transition">Basses</Link></li>
           <li><Link to="/batterie" className="hover:text-blue-400 transition">Batterie</Link></li>
           <li><Link to="/clavier-piano" className="hover:text-blue-400 transition">Clavier / Piano</Link></li>
         </ul>
       </div>
-
       {/* Menu mobile (toggle) */}
       {open && (
         <div className="md:hidden border-t border-white/10">
           <ul className="px-4 py-3 flex flex-col gap-3 text-base">
-            <li><Link to="/guitare" className="block py-2 hover:text-blue-400">Guitares</Link></li>
-            <li><Link to="/effet" className="block py-2 hover:text-blue-400">Effets</Link></li>
-            <li><Link to="/basse" className="block py-2 hover:text-blue-400">Basses</Link></li>
-            <li><Link to="/batterie" className="block py-2 hover:text-blue-400">Batterie</Link></li>
-            <li><Link to="/clavier-piano" className="block py-2 hover:text-blue-400">Clavier / Piano</Link></li>
+            <li><Link to="/guitare" onClick={() => setOpen(false)} className="block py-2 hover:text-blue-400">Guitares</Link></li>
+            <li><Link to="/effet" onClick={() => setOpen(false)} className="block py-2 hover:text-blue-400">Effets</Link></li>
+            <li><Link to="/basse" onClick={() => setOpen(false)} className="block py-2 hover:text-blue-400">Basses</Link></li>
+            <li><Link to="/batterie" onClick={() => setOpen(false)} className="block py-2 hover:text-blue-400">Batterie</Link></li>
+            <li><Link to="/clavier-piano" onClick={() => setOpen(false)} className="block py-2 hover:text-blue-400">Clavier / Piano</Link></li>
           </ul>
         </div>
       )}
