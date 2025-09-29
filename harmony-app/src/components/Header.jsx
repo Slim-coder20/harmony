@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   FaShoppingCart,
   FaUser,
@@ -7,13 +8,27 @@ import {
   FaInfo,
 } from "react-icons/fa";
 import { useCart } from "@/context/CartContext";
+import { useState } from "react";
 
 export default function Header() {
   const { totalCount } = useCart();
+  const navigate = useNavigate();
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const [mobileQuery, setMobileQuery] = useState("");
+
+  function handleMobileSearchSubmit(e) {
+    e.preventDefault();
+    const q = mobileQuery.trim();
+    if (!q) return;
+    navigate(`/search?q=${encodeURIComponent(q)}`);
+    setMobileSearchOpen(false);
+    setMobileQuery("");
+  }
   return (
-    <header className=" bg-gray-900 py-4 text-white border-b border-b-slate-300">
+    <header className=" bg-gray-900 py-4 text-white sticky top-0 z-50">
       {/* Logo */}
-      <div className="container mx-auto flex items-center justify-between ">
+      <div className="max-w-7xl mx-auto px-4 py-3 grid grid-cols-3 md:grid-cols-[auto_1fr_auto] items-center gap-3">
+        {/* Gauche: Blog */}
         <div className="flex flex-row items-center gap-4 flex-1">
           <Link to="/">
             <img
@@ -36,15 +51,24 @@ export default function Header() {
 
         {/* Input de Recherche  */}
         <div className="flex-1 flex justify-center">
-          <div className="relative w-full max-w-xl">
+          {/* Mobile: icône loupe */}
+          <button
+            aria-label="Recherche"
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded bg-gray-800 hover:bg-gray-700"
+            onClick={() => setMobileSearchOpen(true)}
+          >
+            <FaSearch />
+          </button>
+          {/* Desktop: input */}
+          <div className="hidden md:block relative w-full max-w-xl">
             <input
               type="text"
               placeholder="Rechercher..."
-              className=" bg-white w-full p-3 border rounded pr-10 "
+              className=" bg-white w-full p-3 border rounded pr-10 text-black"
             />
             <FaSearch
               size={18}
-              className="absolute right-3 top-5 -translate-y-1/2 text-gray-300"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
             />
           </div>
         </div>
@@ -103,6 +127,27 @@ export default function Header() {
           </div>
         </div>
       </div>
+
+      {/* Overlay de recherche mobile */}
+      {mobileSearchOpen && (
+        <div className="md:hidden fixed inset-0 z-50 bg-black/50" onClick={() => setMobileSearchOpen(false)}>
+          <div className="absolute top-16 left-0 right-0 px-4" onClick={(e) => e.stopPropagation()}>
+            <form onSubmit={handleMobileSearchSubmit} className="bg-white rounded shadow p-3 flex items-center gap-2">
+              <FaSearch className="text-gray-500" />
+              <input
+                autoFocus
+                type="search"
+                value={mobileQuery}
+                onChange={(e) => setMobileQuery(e.target.value)}
+                placeholder="Rechercher..."
+                className="flex-1 h-10 px-2 outline-none text-black"
+              />
+              <button type="button" onClick={() => setMobileSearchOpen(false)} className="px-3 h-10 rounded bg-gray-200 text-gray-800">Annuler</button>
+              <button type="submit" className="px-3 h-10 rounded bg-blue-600 text-white font-semibold">Rechercher</button>
+            </form>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

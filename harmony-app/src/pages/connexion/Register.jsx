@@ -55,6 +55,8 @@ export default function Register() {
       newErrors.confirmPassword = "Les mots de passe ne correspondent pas";
     }
 
+    
+
     if (!formData.adresse.trim()) newErrors.adresse = "L'adresse est requise";
 
     if (!formData.telephone.trim()) {
