@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
-import { useEffect } from "react";
 import { useToast } from "@/context/ToastContext";
+import { useWishlist } from "@/context/WishlistContext";
 
 export default function ProductDetail({ item }) {
   if (!item) return null;
@@ -11,11 +11,10 @@ export default function ProductDetail({ item }) {
   const [tab, setTab] = useState("desc");
   const { addItem, items, totalCount, totalPrice} = useCart();   
   const { showToast } = useToast();
- 
+  const { toggle, hasItem } = useWishlist();
+  const isFavorite = hasItem(item.id);
 
-  useEffect(() => {
-    console.log("totalCount mis à jour:", totalCount);
-  }, [totalCount])
+  
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -91,10 +90,25 @@ export default function ProductDetail({ item }) {
                   showToast("Article ajouté au panier", { type: "success" });
                 }} className="flex-1 h-12 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded">
                   Ajouter au panier
-                </button>
-                <button className="flex-1 h-12 border border-gray-300 hover:bg-gray-50 text-gray-700 font-semibold rounded">
-                  Ajouter à la wishlist
-                </button>
+              </button>
+              <button
+  onClick={() => {
+    toggle(item);
+    showToast(
+      isFavorite ? "Retiré des favoris" : "Ajouté aux favoris",
+      { type: isFavorite ? "info" : "success" }
+    );
+  }}
+  aria-pressed={isFavorite}
+  aria-label={isFavorite ? "Retirer des favoris" : "Ajouter à la wishlist"}
+  className={`flex-1 h-12 border ${
+    isFavorite
+      ? "border-red-300 text-red-600 hover:bg-red-50"
+      : "border-gray-300 text-gray-700 hover:bg-gray-50"
+  } font-semibold rounded transition-colors duration-200`}
+>
+  {isFavorite ? "Retirer des favoris" : "Ajouter à la wishlist"}
+</button>
               </div>
 
               {/* Info livraison/retours */}
@@ -183,9 +197,24 @@ export default function ProductDetail({ item }) {
         }}  className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded">
           Ajouter au panier
         </button>
-        <button className="w-full h-12 border border-gray-300 hover:bg-gray-50 text-gray-700 font-semibold rounded mt-2">
-          Ajouter à la wishlist
-        </button>
+        <button
+  onClick={() => {
+    toggle(item);
+    showToast(
+      isFavorite ? "Retiré des favoris" : "Ajouté aux favoris",
+      { type: isFavorite ? "info" : "success" }
+    );
+  }}
+  aria-pressed={isFavorite}
+  aria-label={isFavorite ? "Retirer des favoris" : "Ajouter à la wishlist"}
+  className={`w-full h-12 border ${
+    isFavorite
+      ? "border-red-300 text-red-600 hover:bg-red-50"
+      : "border-gray-300 text-gray-700 hover:bg-gray-50"
+  } font-semibold rounded mt-2 transition-colors duration-200`}
+>
+  {isFavorite ? "Retirer des favoris" : "Ajouter à la wishlist"}
+</button>
       </div>
     </div>
   );
