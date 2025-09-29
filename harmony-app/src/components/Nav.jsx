@@ -40,6 +40,7 @@ export default function Nav() {
           <li><Link to="/basse" className="hover:text-blue-400 transition">Basses</Link></li>
           <li><Link to="/batterie" className="hover:text-blue-400 transition">Batterie</Link></li>
           <li><Link to="/clavier-piano" className="hover:text-blue-400 transition">Clavier / Piano</Link></li>
+          <li><Link to="/home-studio" className="hover:text-blue-400 transition">HomeStudio</Link></li>
         </ul>
       </div>
       {/* Menu mobile (toggle) */}
@@ -51,6 +52,7 @@ export default function Nav() {
             <li><Link to="/basse" onClick={() => setOpen(false)} className="block py-2 hover:text-blue-400">Basses</Link></li>
             <li><Link to="/batterie" onClick={() => setOpen(false)} className="block py-2 hover:text-blue-400">Batterie</Link></li>
             <li><Link to="/clavier-piano" onClick={() => setOpen(false)} className="block py-2 hover:text-blue-400">Clavier / Piano</Link></li>
+            <li><Link to="/home-studio" onClick={() => setOpen(false)} className="block py-2 hover:text-blue-400">HomeStudio</Link></li>
           </ul>
         </div>
       )}
