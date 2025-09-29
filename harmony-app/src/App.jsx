@@ -17,6 +17,7 @@ import Effet from "@/pages/articles/Effet";
 import Batterie from "@/pages/articles/Batterie"
 import PianoClavier from "@/pages/articles/PianoClavier";
 import HomeStudio from "@/pages/articles/HomeStudio";
+import Wishlist from "@/pages/Wishlist";
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/equipe" element={<Team />} />
         <Route path="/harmony-store" element={<HarmonyStore />} />
+        <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/guitare" element={<Guitare />} />
         <Route path="/basse" element={<Basse />} />
         <Route path="/effet" element={<Effet />} />
