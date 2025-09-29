@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "@/context/CartContext";
+import { useEffect } from "react";
+import { useToast } from "@/context/ToastContext";
 
 export default function ProductDetail({ item }) {
   if (!item) return null;
 
   const hasBadge = item.badge && String(item.badge).trim().length > 0;
   const [tab, setTab] = useState("desc");
+  const { addItem, items, totalCount, totalPrice} = useCart();   
+  const { showToast } = useToast();
+ 
+
+  useEffect(() => {
+    console.log("totalCount mis à jour:", totalCount);
+  }, [totalCount])
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -76,7 +86,10 @@ export default function ProductDetail({ item }) {
 
               {/* CTA */}
               <div className="flex flex-col sm:flex-row gap-3 mt-2">
-                <button className="flex-1 h-12 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded">
+                <button onClick={() => {
+                  addItem(item);
+                  showToast("Article ajouté au panier", { type: "success" });
+                }} className="flex-1 h-12 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded">
                   Ajouter au panier
                 </button>
                 <button className="flex-1 h-12 border border-gray-300 hover:bg-gray-50 text-gray-700 font-semibold rounded">
@@ -164,8 +177,14 @@ export default function ProductDetail({ item }) {
 
       {/* Barre CTA sticky mobile */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 p-3 bg-white/95 backdrop-blur border-t">
-        <button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded">
+        <button onClick={ () => {
+          addItem(item);
+          showToast("Article ajouté au panier", { type: "success" });
+        }}  className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded">
           Ajouter au panier
+        </button>
+        <button className="w-full h-12 border border-gray-300 hover:bg-gray-50 text-gray-700 font-semibold rounded mt-2">
+          Ajouter à la wishlist
         </button>
       </div>
     </div>
