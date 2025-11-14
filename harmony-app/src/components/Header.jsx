@@ -33,12 +33,42 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 py-2 md:py-3 grid grid-cols-3 md:grid-cols-[auto_1fr_auto] items-center gap-3">
         {/* Gauche: Blog */}
         <div className="flex flex-row items-center gap-4 flex-1">
-          <Link to="/">
-            <img
-              src="/home/Logo.png"
-              alt="Logo Harmony"
-              className="h-10 md:h-20 cursor-pointer"
-            />
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="flex items-center gap-2">
+              {/* Symbole musical moderne - ondes sonores */}
+              <svg
+                className="h-8 md:h-10 w-auto cursor-pointer transition-transform group-hover:scale-110"
+                viewBox="0 0 60 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#3B82F6" />
+                    <stop offset="100%" stopColor="#8B5CF6" />
+                  </linearGradient>
+                </defs>
+                {/* Ondes sonores stylisées */}
+                <path
+                  d="M8 28 L8 20 Q8 16 12 16 Q16 16 16 20 L16 28 Q16 32 12 32 Q8 32 8 28 Z"
+                  fill="url(#logoGradient)"
+                />
+                <path
+                  d="M20 24 L20 20 Q20 14 26 14 Q32 14 32 20 L32 24 Q32 30 26 30 Q20 30 20 24 Z"
+                  fill="url(#logoGradient)"
+                  opacity="0.8"
+                />
+                <path
+                  d="M36 22 L36 20 Q36 12 44 12 Q52 12 52 20 L52 22 Q52 30 44 30 Q36 30 36 22 Z"
+                  fill="url(#logoGradient)"
+                  opacity="0.6"
+                />
+              </svg>
+              {/* Texte Harmony avec style moderne */}
+              <span className="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors cursor-pointer tracking-tight">
+                Harmony
+              </span>
+            </div>
           </Link>
           {/* Menu blog  */}
           <Link to="/blog" className="flex items-center gap-2 ml-2">
